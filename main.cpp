@@ -397,13 +397,25 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"pivx.seed.fuzzbawls.pw", "pivx.seed2.fuzzbawls.pw", "coin-server.com", "s3v3nh4cks.ddns.net", "178.254.23.111", "188.165.212.82", ""};
+static const string mainnet_seeds[] = {
+        "18.228.216.158", 
+        "13.210.111.12", 
+        "46.19.210.197", 
+        "46.19.214.68", 
+        "142.93.145.197", 
+        "159.65.84.118", 
+        "167.99.223.138", 
+        "68.183.161.44", 
+        "46.19.212.68", 
+        "46.19.213.68",
+        "46.19.209.68"
+};
 static const string testnet_seeds[] = {""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
-    db.Add(CService("188.165.212.82", 51472), true);
+    db.Add(CService("188.165.212.82", 37817), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
